@@ -2,7 +2,9 @@ package onlyme.laboratory.java8.date;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
@@ -35,6 +37,23 @@ public class Main {
         LocalDate date = LocalDate.parse("07/15/1982", formatter);
         System.out.println(date);
         System.out.println(now.format(formatter));
+
+        // stream 요소 합쳐서 분리하기
+        StringBuilder sb = new StringBuilder();
+        List<String> fruits = List.of("a", "bb", "ccc", "dddd", "eeeee", "ffffff", "ggggggg", "hhhhhhhh", "iiiiiiiii", "jjjjjjjjjj");
+        AtomicInteger indexKey = new AtomicInteger(0);
+        fruits.stream().collect(Collectors.groupingBy(s -> {
+            indexKey.get();
+            if (sb.toString().length() + s.length() < 16) {
+                sb.append(s);
+            } else {
+                // 초기화
+                sb.setLength(0);
+                sb.append(s);
+                indexKey.incrementAndGet();
+            }
+            return indexKey.get();
+        })).values().forEach(s -> System.out.println(s));
 
     }
 }
