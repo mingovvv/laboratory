@@ -1,4 +1,4 @@
-package onlyme.laboratory.book.effectiveJava.no5;
+package onlyme.laboratory.book.effectiveJava.no2;
 
 public class Student {
 
