@@ -1,4 +1,4 @@
-package onlyme.laboratory.designPattern.no05_Singleton;
+package onlyme.laboratory.book.designPattern.no05_Singleton;
 
 // 싱글톤(이른 초기화, eager initialization)
 public class Singleton {

@@ -1,4 +1,4 @@
-package onlyme.laboratory.designPattern.no05_Singleton;
+package onlyme.laboratory.book.designPattern.no05_Singleton;
 
 // 싱글톤(static inner class, 권장되는 방법)
 public class Singleton4 {

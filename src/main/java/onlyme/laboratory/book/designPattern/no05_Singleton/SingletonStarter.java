@@ -1,4 +1,4 @@
-package onlyme.laboratory.designPattern.no05_Singleton;
+package onlyme.laboratory.book.designPattern.no05_Singleton;
 
 public class SingletonStarter {
     public static void main(String[] args) {
